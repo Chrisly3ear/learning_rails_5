@@ -8,4 +8,9 @@
     <p class="right">
       Comments(<%= post.comments.count %>)
     </p>
+    <ul>
+      <%= content_tag_for :li, post.tags do |tag|
+        tag.name
+      end %>
+    </ul>
 <% end %>
