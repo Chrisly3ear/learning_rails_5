@@ -8,3 +8,12 @@
      comment.body
    end %>
 <% end %>
+
+<%= form_for [@post, @post.comments.build] do |f| %>
+  <div class="form-group">
+    <%= f.text_area :body, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Save Comment", class: "btn btn-block btn-success" %>
+  </div>
+<% end %>
