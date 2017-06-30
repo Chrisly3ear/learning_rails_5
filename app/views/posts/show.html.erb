@@ -1,1 +1,10 @@
-<%= render 'show' %>
+<h1><%= @post.title %></h1>
+<p><%= @post.body %></p>
+
+<hr />
+<h2>Comments</h2>
+<%= div_for @post.comments, class: "panel panel-default" do |comment| %>
+  <%= div_for(comment, class: "panel-body") do
+     comment.body
+   end %>
+<% end %>
