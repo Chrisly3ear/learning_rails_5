@@ -1,10 +1,14 @@
 class PostsController < ApplicationController
     def index
-        @posts = Post.all
+        @posts = Post.order("updated_at desc")
     end
 
     def new
       @post = Post.new
+    end
+
+    def show
+      @post = Post.where(id: params[:id]).first
     end
 
     def create
@@ -16,6 +20,24 @@ class PostsController < ApplicationController
 
     def edit
       @post = Post.where(id: params[:id]).first
+    end
+
+    def update
+      @post = Post.where(id: params[:id]).first
+      if @post.update_attributes(post_params)
+        redirect_to posts_path
+      else
+        # Formular wieder rendern
+      end
+    end
+
+    def destroy
+      @post = Post.where(id: params[:id]).first
+      if @post.destroy
+        redirect_to posts_path
+      else
+        # Formular wieder rendern
+      end
     end
 
     private
