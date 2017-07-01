@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+
   def create
     @user = User.where(email: params[:email]).first
     if @user.authenticate(params[:password])
@@ -9,4 +10,10 @@ class SessionsController < ApplicationController
       render :new
     end
   end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to root_path
+  end
+
 end

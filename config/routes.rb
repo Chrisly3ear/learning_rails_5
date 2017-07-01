@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resources :sessions
+  resource  :session
 
   resources :posts do
     resources :comments
