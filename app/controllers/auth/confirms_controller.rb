@@ -1,4 +1,4 @@
-class ConfirmsController < ApplicationController
+class Auth::ConfirmsController < Auth::BaseController
 
   def new
 
