@@ -1,22 +1,22 @@
-<%= form_for @post do |f| %>
+<%= form_for @post do |f| -%>
   <div class="form-group">
-    <%=h f.label :title %>
-    <%=h f.text_field :title, class: "form-control" %>
+    <%=h f.label :title -%>
+    <%=h f.text_field :title, class: "form-control" -%>
   </div>
   <div class="form-group">
-    <%=h f.label :body %>
-    <%=h f.text_area :body, class: "form-control" %>
+    <%=h f.label :body -%>
+    <%=h f.text_area :body, class: "form-control" -%>
   </div>
   <div class="form-group">
-    <%=h f.collection_check_boxes :tag_ids, Tag.all, :id, :name do |t| %>
+    <%=h f.collection_check_boxes :tag_ids, Tag.all, :id, :name do |t| -%>
       <div class="checkbox">
-        <%=h t.label do %>
-          <%=h t.check_box + t.text %>
-        <% end %>
+        <%=h t.label do -%>
+          <%=h t.check_box + t.text -%>
+        <% end -%>
       </div>
-    <% end %>
+    <% end -%>
   </div>
   <div class="form-group">
-    <%= f.submit "Save", class: "btn btn-block btn-success" %>
+    <%= f.submit "Save", class: "btn btn-block btn-success" -%>
   </div>
-<% end %>
+<% end -%>

@@ -1,12 +1,12 @@
-<%= div_for post do %>
-  <h2><%= link_to (h post.title), post_path(post) %></h2>
-  <p><%=h post.body %></p>
+<%= div_for post do -%>
+  <h2><%= link_to (h post.title), post_path(post) -%></h2>
+  <p><%=h post.body -%></p>
     <p class="right">
-      Comments(<%=h post.comments.count %>)
+      Comments(<%=h post.comments.count -%>)
     </p>
     <ul>
       <%= content_tag_for :li, post.tags do |tag|
         (h tag.name)
-      end %>
+      end -%>
     </ul>
-<% end %>
+<% end -%>

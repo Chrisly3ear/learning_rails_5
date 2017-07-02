@@ -2,19 +2,19 @@
 <html>
   <head>
     <title>LearnRails</title>
-    <%= csrf_meta_tags %>
+    <%= csrf_meta_tags -%>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' -%>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' -%>
   </head>
 
   <body>
-    <%= render "navbar" %>
+    <%= render "navbar" -%>
     <div id="main" class="container">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
-          <%= render 'flash_messages' %>
-          <%= yield %>
+          <%= render 'flash_messages' -%>
+          <%= yield -%>
         </div>
       </div>
     </div>
