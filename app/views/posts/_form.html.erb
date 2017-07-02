@@ -1,17 +1,17 @@
 <%= form_for @post do |f| %>
   <div class="form-group">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: "form-control" %>
+    <%=h f.label :title %>
+    <%=h f.text_field :title, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :body %>
-    <%= f.text_area :body, class: "form-control" %>
+    <%=h f.label :body %>
+    <%=h f.text_area :body, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name do |t| %>
+    <%=h f.collection_check_boxes :tag_ids, Tag.all, :id, :name do |t| %>
       <div class="checkbox">
-        <%= t.label do %>
-          <%= t.check_box + t.text %>
+        <%=h t.label do %>
+          <%=h t.check_box + t.text %>
         <% end %>
       </div>
     <% end %>

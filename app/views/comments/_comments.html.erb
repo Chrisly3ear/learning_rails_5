@@ -2,9 +2,9 @@
 <h2>Comments</h2>
 <%= div_for @post.comments, class: "panel panel-default" do |comment| %>
   <%= div_for(comment, class: "panel-body") do %>
-     <%= comment.body %>
+     <%=h comment.body %>
      <div class="author">
-      Commented by: <%= comment.user.email %>
+      Commented by: <%=h comment.user.email %>
      </div>
    <% end %>
 <% end %>
