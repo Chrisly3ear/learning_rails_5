@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
 
   namespace :auth do
-    resource :confirm
     resources :users, only: [:create]
+    resource :confirm, only: [:new]
     resource  :session, only: [:create]
   end
   get "login" => "auth/sessions#new"
