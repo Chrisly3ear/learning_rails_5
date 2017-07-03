@@ -1,7 +1,8 @@
 require 'test_helper'
 
-class PostsControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+class PostsControllerTest < ActionController::TestCase
+  test "index action should be success" do
+    get :index
+    assert_response :success
+  end
 end
