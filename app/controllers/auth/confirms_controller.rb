@@ -13,10 +13,10 @@ class Auth::ConfirmsController < Auth::BaseController
     if session[:user_id].present?
       redirect_to root_path, info: "You are already logged in!"
     # Schon Bestätigt??
-    elsif user&.confirmed?
+  elsif user && user.confirmed?
       redirect_to login_path, info: "Email already confirmed. Please login!"
     # Noch nicht bestätigt?
-    elsif user && user.confirmed?
+    elsif user && !user.confirmed?
       user.update_attributes(confirmed_at: DateTime.now)
       session[:user_id] = user.id
       redirect_to root_path, success: "Thanks for confirming your email!"
