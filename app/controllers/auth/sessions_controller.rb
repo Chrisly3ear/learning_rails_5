@@ -2,7 +2,7 @@ class Auth::SessionsController < Auth::BaseController
 
   def create
     @user = User.where(email: params[:email]).first
-    if @user && @user.confirmed? && @user.authenticate(params[:password])
+    if @user&.confirmed? && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect_to root_path, success: "You have signed in!"
     else
