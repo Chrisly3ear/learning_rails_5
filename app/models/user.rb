@@ -3,6 +3,8 @@ class User < ApplicationRecord
 
   validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 
+  validates :role, inclusion: %w(admin user)
+
   before_create :generate_confirmation_token
 
   def generate_confirmation_token
@@ -12,4 +14,9 @@ class User < ApplicationRecord
   def confirmed?
     self.confirmed_at.present?
   end
+
+  def admin?
+    self.role == "admin"
+  end
+
 end
