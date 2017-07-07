@@ -3,19 +3,11 @@
 admin_user:
   name: Oaga Bua!
   email: asdf@asdf.com
-<<<<<<< HEAD
   password_digest: <%= BCrypt::Password.create('Nutte') %>
-=======
-  password_digest: MyString
->>>>>>> a162979d2e2792ab7159cc8721676bff66d642f9
   role: admin
 
 regular_user:
   name: Norbert Normalo
   email: MyString@gmail.com
-<<<<<<< HEAD
   password_digest: <%= BCrypt::Password.create('Ficker') %>
-=======
-  password_digest: MyString
->>>>>>> a162979d2e2792ab7159cc8721676bff66d642f9
   role: user
