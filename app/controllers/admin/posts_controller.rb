@@ -1,6 +1,6 @@
 class Admin::PostsController < Admin::BaseController
     def index
-        @posts = Post.order("updated_at desc")
+        @posts = Post.order("created_at DESC").page(params[:page]).per(5)
     end
 
     def show
